@@ -1,0 +1,24 @@
+rules:
+  - id: detect-unsupported-dotnet-framework-target
+    languages:
+      - xml
+    message: This .NET framework version is no longer supported.
+    severity: WARNING
+    metadata:
+      subcategory:
+      - eol
+    technology:
+    - .net
+    references:
+    - https://endoflife.date/dotnetfx
+    - https://endoflife.date/dotnet
+    patterns:
+      - pattern: <TargetFramework>net2.0</TargetFramework>
+      - pattern: <TargetFramework>net3.0</TargetFramework>
+      - pattern: <TargetFramework>net3.5</TargetFramework>
+      - pattern: <TargetFramework>net4.0</TargetFramework>
+      - pattern: <TargetFramework>net4.5</TargetFramework>
+      - pattern: <TargetFramework>net4.5.1</TargetFramework>
+      - pattern: <TargetFramework>net4.6</TargetFramework>
+      - pattern: <TargetFramework>net4.6.1</TargetFramework>
+      - pattern: <TargetFramework>net6.0</TargetFramework>
